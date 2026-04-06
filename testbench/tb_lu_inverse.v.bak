@@ -1,0 +1,84 @@
+module tb_lu_inverse;
+
+reg clk;
+reg start;
+
+reg signed [31:0] H0,H1,H2,H3;
+reg signed [31:0] H4,H5,H6,H7;
+reg signed [31:0] H8,H9,H10,H11;
+reg signed [31:0] H12,H13,H14,H15;
+
+wire signed [31:0] Hinv0,Hinv1,Hinv2,Hinv3;
+wire signed [31:0] Hinv4,Hinv5,Hinv6,Hinv7;
+wire signed [31:0] Hinv8,Hinv9,Hinv10,Hinv11;
+wire signed [31:0] Hinv12,Hinv13,Hinv14,Hinv15;
+
+wire done;
+
+integer file;
+integer r;
+
+lu_matrix_inverse uut(
+.clk(clk),
+.start(start),
+
+.H0(H0),.H1(H1),.H2(H2),.H3(H3),
+.H4(H4),.H5(H5),.H6(H6),.H7(H7),
+.H8(H8),.H9(H9),.H10(H10),.H11(H11),
+.H12(H12),.H13(H13),.H14(H14),.H15(H15),
+
+.Hinv0(Hinv0),.Hinv1(Hinv1),.Hinv2(Hinv2),.Hinv3(Hinv3),
+.Hinv4(Hinv4),.Hinv5(Hinv5),.Hinv6(Hinv6),.Hinv7(Hinv7),
+.Hinv8(Hinv8),.Hinv9(Hinv9),.Hinv10(Hinv10),.Hinv11(Hinv11),
+.Hinv12(Hinv12),.Hinv13(Hinv13),.Hinv14(Hinv14),.Hinv15(Hinv15),
+
+.done(done)
+);
+
+always #5 clk = ~clk;
+
+initial
+begin
+
+clk = 0;
+start = 0;
+
+file = $fopen("data/channel_data.txt","r");
+
+while(!$feof(file))
+begin
+
+r = $fscanf(file,"%d %d %d %d\n",H0,H1,H2,H3);
+r = $fscanf(file,"%d %d %d %d\n",H4,H5,H6,H7);
+r = $fscanf(file,"%d %d %d %d\n",H8,H9,H10,H11);
+r = $fscanf(file,"%d %d %d %d\n",H12,H13,H14,H15);
+
+#10
+start = 1;
+
+#100
+start = 0;
+
+#200
+
+$display("INPUT MATRIX");
+$display("%d %d %d %d",H0,H1,H2,H3);
+$display("%d %d %d %d",H4,H5,H6,H7);
+$display("%d %d %d %d",H8,H9,H10,H11);
+$display("%d %d %d %d",H12,H13,H14,H15);
+
+$display("OUTPUT MATRIX");
+$display("%d %d %d %d",Hinv0,Hinv1,Hinv2,Hinv3);
+$display("%d %d %d %d",Hinv4,Hinv5,Hinv6,Hinv7);
+$display("%d %d %d %d",Hinv8,Hinv9,Hinv10,Hinv11);
+$display("%d %d %d %d",Hinv12,Hinv13,Hinv14,Hinv15);
+
+end
+
+$fclose(file);
+
+$stop;
+
+end
+
+endmodule

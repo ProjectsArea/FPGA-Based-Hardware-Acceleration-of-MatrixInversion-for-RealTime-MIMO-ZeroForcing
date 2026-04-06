@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/hp/FPGA_MIMO_Project/testbench
+vmatrix_inverse_lu
+!s110 1774526044
+!i10b 1
+!s100 cJcCjTPRCIP@7ELJLJ;fF1
+I5AnVRiOV>5aj6KUCW=7nN2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1774523610
+8C:/Users/hp/FPGA_MIMO_Project/rtl/matrix_inverse_lu.v
+FC:/Users/hp/FPGA_MIMO_Project/rtl/matrix_inverse_lu.v
+L0 1
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1774526044.000000
+!s107 C:/Users/hp/FPGA_MIMO_Project/rtl/matrix_inverse_lu.v|
+!s90 -reportprogress|300|C:/Users/hp/FPGA_MIMO_Project/rtl/matrix_inverse_lu.v|
+!i113 1
+Z3 tCvgOpt 0
+vtb_matrix_inverse
+!s110 1774526045
+!i10b 1
+!s100 ?k;_gVB?8jbjDCKT^_MD63
+I9Oa37]S`8[18Qe1HKkmzD0
+R1
+R0
+w1774523614
+8C:/Users/hp/FPGA_MIMO_Project/testbench/tb_matrix_inverse.v
+FC:/Users/hp/FPGA_MIMO_Project/testbench/tb_matrix_inverse.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1774526045.000000
+!s107 C:/Users/hp/FPGA_MIMO_Project/testbench/tb_matrix_inverse.v|
+!s90 -reportprogress|300|C:/Users/hp/FPGA_MIMO_Project/testbench/tb_matrix_inverse.v|
+!i113 1
+R3
